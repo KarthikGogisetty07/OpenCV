@@ -1,6 +1,6 @@
 # ADR-TaskPhase-openCV
 
-"The Goal of the code in this repo is to get familiar with the basics of OpenCV in python."
+"The Goal of the code in this repository is to get familiar with the basics of OpenCV in python."
 
 ##### SOURCE
 https://docs.opencv.org/master/d6/d00/tutorial_py_root.html
