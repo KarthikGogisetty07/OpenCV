@@ -6,10 +6,14 @@ The Goal of the code in this repository is to get familiar with the basics and t
 At first we used commands to convert a color image into a grayscale, Now one has to remember that all the analysis in many OpenCV problem statements are done by converting the given image into grayscale and then converted back to color as in grayscale we only deal with two colors in general, hence quite easy and approachable. The first code emphasis on the process to convert into grayscale from a BGR form.
 
 #### IMAGE-GRAYSCALE
- <p align="centre"> <img src="GrayScale.png" height="50"/> </p>
+
+ ![BW_basics](https://user-images.githubusercontent.com/69350191/91662700-b7d67000-eb01-11ea-8e74-bee3503e9fd0.PNG)
+ 
 Second Part of the notebook emphasis on the different shapes we can draw on the image that we loaded. The different results that are obtained in the code are:
+
 #### IMAGES-LINE
-![LINE](https://user-images.githubusercontent.com/69350191/91645402-69be5f80-ea62-11ea-8cfb-1d6fcd9d41a3.PNG)
+
+![LINE](https://user-images.githubusercontent.com/69350191/91662706-c6248c00-eb01-11ea-9a61-2285000fbfbe.PNG)
 
 #### RECTANGLE
 ![rectangle](https://user-images.githubusercontent.com/69350191/91645416-8064b680-ea62-11ea-8503-b9865e8c6419.PNG)
