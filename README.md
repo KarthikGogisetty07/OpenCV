@@ -5,13 +5,13 @@
 The Goal of the code in this repository is to get familiar with the basics and techniques used in OpenCV. Let us first looking into some basic ideologies in an openCV.
 At first we used commands to convert a color image into a grayscale, Now one has to remember that all the analysis in many OpenCV problem statements are done by converting the given image into grayscale and then converted back to color as in grayscale we only deal with two colors in general, hence quite easy and approachable. The first code emphasis on the process to convert into grayscale from a BGR form.
 
-#### IMAGE-GRAYSCALE
+#### GRAYSCALE
 
  ![BW_basics](https://user-images.githubusercontent.com/69350191/91662700-b7d67000-eb01-11ea-8e74-bee3503e9fd0.PNG)
  
-Second Part of the notebook emphasis on the different shapes we can draw on the image that we loaded. The different results that are obtained in the code are:
+Then I emphasised on the different shapes we can draw on the image that we loaded. While providing the thickness of the shapes drawn, in the last argument we code (-1), to completely fill the shapes. The different results that are obtained in the code are
 
-#### IMAGES-LINE
+#### LINE
 
 ![LINE](https://user-images.githubusercontent.com/69350191/91662706-c6248c00-eb01-11ea-9a61-2285000fbfbe.PNG)
 
@@ -25,7 +25,7 @@ Second Part of the notebook emphasis on the different shapes we can draw on the 
 ![poly](https://user-images.githubusercontent.com/69350191/91645434-9ffbdf00-ea62-11ea-88b1-a9c6dee215c1.PNG)
 
 ### IMAGE-BLENDING
-This is a technique used in cv to merge two pic of same sizes. The function cv.add(), adds all the pixel values of at every particular location of two images that are inputed and displays a much brighter image than the orignal pictures it is because the addition of pixels almost at every location is near or equal to 255 which depicts that it is bright/White.
+This is a technique used in cv to merge two pic of same sizes. The function cv.add(), adds all the pixel values of at every particular location of two images that are given as inputs and displays a much brighter image than the orignal pictures it is because the addition of pixels almost at every location is near or equal to 255 which depicts that it is bright or White.
 #### IMAGE-add
 
 ![Addtest](https://user-images.githubusercontent.com/69350191/91645442-b5710900-ea62-11ea-9bd2-44ca8d219b22.PNG)
@@ -60,6 +60,7 @@ If we apply thresholding to a color picture you obtain different colours at diff
 #### THRESHOLD-ADAPTIVE
 
 ![adaptiveThreshold](https://user-images.githubusercontent.com/69350191/91645554-9d4db980-ea63-11ea-9dc4-d77e3a805671.PNG)
+
 
 ##### SOURCE
 https://docs.opencv.org/master/d6/d00/tutorial_py_root.html
