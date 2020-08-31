@@ -61,6 +61,16 @@ If we apply thresholding to a color picture you obtain different colours at diff
 
 ![adaptiveThreshold](https://user-images.githubusercontent.com/69350191/91645554-9d4db980-ea63-11ea-9dc4-d77e3a805671.PNG)
 
+In the second Notebook we discussed about few techniques performed in openCV for Analysis. Color filtering is a processes of targeting one color of the picture and displaying it in specific (particular color). We convert the picure into HSV as HSV helps to differentiate intensity from color. We have choosen a numpy array to define the color value range for blue/red and then apply mask for tht particular value by converting them to grayscale as the computation is easy. The acquried region that has color is displayed back from the original picture. If you want to understand what 0xFF means in the code read this. The code then waits for the user to hit the ‘Esc’ button which will quit it and destroy all the windows to cleanup.
+#### Original Image:
+
+#### Mask:
+
+#### Displayed Image:
+
+We are observing a lot of disturbance in the image due to external factors hence, We try reducing the noise in the image by smoothing the edges. This can be done using many fuctions to filter the image in openCV Now, let us discuss few of them. The very first basic method is 2D-Convolution. The convolution happens between source image and kernel. Kernel is another array, that is usually smaller than the source image, and defines the filtering action. A kernel could be a high pass, low pass, or a custom that can detect certain features in the image. Low pass filters take the average of the pixels in the specific kernel shape that is defined and replaces them with that particular number obtain it is usually used to reduce noise , While a high pass filter is used to detect edges which will be encounterd soon. Apply convolution between source image and kernel using cv2.filter2D() function and we end up with a smooth picture than the original one. 
+
+
 
 ##### SOURCE
 https://docs.opencv.org/master/d6/d00/tutorial_py_root.html
