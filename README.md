@@ -2,7 +2,10 @@
 
 # INTRODUCTION
 
-The Goal of the code in this repository is to get familiar with the basics and techniques used in OpenCV. Let us first looking into some basic ideologies in an openCV.
+The Goal of the codes in this repository is to get familiar with the basics and wide techniques used in OpenCV. Let us first look into some basic ideologies in an openCV.
+
+### Basics:
+
 At first we used commands to convert a color image into a grayscale, Now one has to remember that all the analysis in many OpenCV problem statements are done by converting the given image into grayscale and then converted back to color as in grayscale we only deal with two colors in general, hence quite easy and approachable. The first code emphasis on the process to convert into grayscale from a BGR form.
 
 #### GRAYSCALE:
@@ -11,33 +14,35 @@ At first we used commands to convert a color image into a grayscale, Now one has
  
 Then I emphasised on the different shapes we can draw on the image that we loaded. While providing the thickness of the shapes drawn, in the last argument we code (-1), to completely fill the shapes. The different results that are obtained in the code are
 
-#### LINE:
+#### DRAWING DIFFERENT SHAPES ON THE LOADED PIC : (WRITING ON PIC)
+
+#### Line:
 
 ![LINE](https://user-images.githubusercontent.com/69350191/91662706-c6248c00-eb01-11ea-9a61-2285000fbfbe.PNG)
 
-#### RECTANGLE:
+#### Rectangle:
 ![rectangle](https://user-images.githubusercontent.com/69350191/91645416-8064b680-ea62-11ea-8503-b9865e8c6419.PNG)
 
-#### CIRCLE:
+#### Circle:
 ![circle](https://user-images.githubusercontent.com/69350191/91645423-8f4b6900-ea62-11ea-99f9-588e71630bc5.PNG)
 
-#### POLYGON:
+#### Polygon:
 ![poly](https://user-images.githubusercontent.com/69350191/91645434-9ffbdf00-ea62-11ea-88b1-a9c6dee215c1.PNG)
 
-### IMAGE-BLENDING
+### Image-Blending
 This is a technique used in cv to merge two pic of same sizes. The function cv.add(), adds all the pixel values of at every particular location of two images that are given as inputs and displays a much brighter image than the orignal pictures it is because the addition of pixels almost at every location is near or equal to 255 which depicts that it is bright or White.
-#### IMAGE-add:
+#### Image-add:
 
 ![Addtest](https://user-images.githubusercontent.com/69350191/91645442-b5710900-ea62-11ea-9bd2-44ca8d219b22.PNG)
 
 Where as in weighted addition technique each of the pic is given some weight (percentage) of its opaqueness. Hence, the pics overlay on each other according to the percentages assigned.
-#### IMAGE-adaptive add:
+#### Image-adaptive-add:
 
 ![Blendtest](https://user-images.githubusercontent.com/69350191/91645451-c6ba1580-ea62-11ea-8724-9c8bbc1b4467.PNG)
 
 
 Next, we have used bitwise operations just similar to logic gates that we study in Electronics. The motto was to imprint a loggo on a graphical image. Hence, first we consider the ROI (Region of Intrest) and then after collecting its coorinates we perform certain operations accordingly. In my case, the img2 consist of a logo of python and img1 consists of a graph. I have feed the rows and colomns of img2 to ROI in img1. Later converted the logo into grayscale for further analysis. The threshold functions helps in obtaining either a 1 (255) or 0 (000) in GrayScale with respect to the threshold value given. The 220 in the code acts as a threshold value and if the location has values greater than or equal to threshold then it's 1. Now the logo coordinates are obtained by asserting them accordingly. And that region is imprinted on the img1 after changing the foreground (fg) of img1 and background (bg) of img2 as show in the code. 
-#### IMAGE-operations:
+#### operations-Result:
 
 ![operations](https://user-images.githubusercontent.com/69350191/91645522-48aa3e80-ea63-11ea-97a0-d9101a72f21c.PNG)
 
@@ -45,19 +50,19 @@ Next, we have used bitwise operations just similar to logic gates that we study 
 For every pixel, a specific threshold value is set and checked. If the pixel value is smaller than the threshold, it is set to 0, otherwise it is set to a maximum value. The function cv.threshold is used to apply the thresholding. The first argument is the source image. The second argument is the threshold value which is used to classify the pixel values. The third argument is the maximum value which is assigned to pixel values exceeding the threshold. There are many types of thresholding techniques of which i will be discusing few for more information you can vist the source.
 If we apply thresholding to a color picture you obtain different colours at different points according to the threshold set hence, it's prefered to convert into grayscale. In some situation where the picture is taken in dark locations and the has curved structure resulting in the light source to reach differently at every point, it is preffered to use an optimised technique called Adaptive Thresholding. Here, the algorithm determines the threshold for a pixel based on a small region around it. So we get different thresholds for different regions of the same image which gives better results for images with varying illumination. 
 
-#### ORIGINAL-IMAGE:
+#### Original-Image:
 
 ![BOOKPAGE](https://user-images.githubusercontent.com/69350191/91645464-efdaa600-ea62-11ea-86b0-c0bd7c878553.PNG)
 
-#### THRESHOLD-COLOR:
+#### Thresholding-Color:
 
 ![thresholdColor](https://user-images.githubusercontent.com/69350191/91645539-6d9eb180-ea63-11ea-9300-3adf597fd82c.PNG)
 
-#### THRESHOLD-GRAYSCALE:
+#### Thresholding-Grayscale:
 
 ![threshold_B W](https://user-images.githubusercontent.com/69350191/91645545-860ecc00-ea63-11ea-989b-d02ff4f3cc1b.PNG)
 
-#### THRESHOLD-ADAPTIVE:
+#### THRESHOLD-Adaptive:
 
 ![adaptiveThreshold](https://user-images.githubusercontent.com/69350191/91645554-9d4db980-ea63-11ea-9dc4-d77e3a805671.PNG)
 
@@ -143,9 +148,62 @@ Technically, wo threshold values, minVal and maxVal. Any edges with intensity gr
 
 ![canny](https://user-images.githubusercontent.com/69350191/91746495-4a4a4280-ebda-11ea-9c59-4520c09bae76.png)
 
+### Templet Matching
+In this code we specified two picture one with a full background and foreground and the other with just the foreground of intrest to be found on the first image. As the name suggest your goal is to match the templet in your original pic. It can be a simple templete that just appears once in the image or a recurring one. OpenCV comes with a function cv2.matchTemplate() for this purpose. It simply slides the template image over the input image (as in 2D convolution) and compares the template and patch of input image under the template image. 
+
+#### Original Image
+
+![virat](https://user-images.githubusercontent.com/69350191/91856836-b4b7bd00-ec84-11ea-9741-142b2a40dc53.png)
+
+#### Templet Picture
+
+![face](https://user-images.githubusercontent.com/69350191/91856915-ce590480-ec84-11ea-90d4-1748e3f2b168.png)
+
+#### After Templet Matching
+
+![templetmatching](https://user-images.githubusercontent.com/69350191/91856992-ea5ca600-ec84-11ea-92a1-6f8513251e7f.png)
+
+### Feature (Corner Detection)
+In the code we tried getting the output of the corners that are presnt in an image, python-cv comes with many inbuilt functions. Let us discuss one of the finest technique ORB it is considered to be the fusion of all the other techniques that are presnt in open-cv, hence can be said the best corner detecting algorithm in open cv we specif the number of corners to be detected in an image along with distance between each of each of the corner. If the surrounding pixels have a varying intensity around one particular point it considers the point to be a corner i.e. It computes the intensity weighted centroid of the patch with located corner at center. The following shows the result i obtained and also choosing the color of a corner is important definetly you dont want your corner color to be white when your background is white which reduces the number of corners you observe, i even tried altering the nukmber of corners to be detected, intrestingly, the algorithm could not detect all the corners of squares and rectangles as i decreased the number of corners to be computed. Hence, by trial and error method i considerd an optimum number for my picture. 
+#### Original-picture
+
+![Shapes](https://user-images.githubusercontent.com/69350191/91858417-cac67d00-ec86-11ea-8df7-12f0a1f86b75.png)
+
+#### Result
+
+![corners](https://user-images.githubusercontent.com/69350191/91858474-df0a7a00-ec86-11ea-8ddd-1aeeec1e5d0e.png)
+
+### Templete Matching 
+This is an other intresting algorithm that helps detect your object which can be in different orientations direction from your templet picture, previously when we considerd in matching the face temple with orignal picture the oreintation was same for the pictures that are considerd in this method orientation and angles of the features of the object need not be constant and can varry, definetly you cannot expect all the features to match with the requried but yet almost 70% of the features are matched correctly. As usual we set a threshold limit as the computation is done in grayscale there is every possiblity that you can have save pixel values around one particular feature leading to a 10-20% of mismatches. In this code,  I considered a pillow with one orientation as my templete and passed an argument to detect it on my parent picture that has differnt objects along with object of intrest in different orientation. Intrestingly, the computation of matching the features was quites satisfying with threshold of 0.7 if i try decreasing or increasing it it was not so favorable and started to mismatch many features that it detected. 
+
+#### Result:
+
+![FeaturingMatching](https://user-images.githubusercontent.com/69350191/91859372-0150c780-ec88-11ea-9640-145b56d31c3d.png)
+
+### Motion Detection
+This was the finnest algorithm so far, firstly let us know about Background subtraction, also known as Foreground Detection. It is a technique in the fields of image processing and computer vision where an image's foreground is extracted for further processing (object-recognition, face-detection, etc.) Python-cv comes with different background subtraction technique algorithms out if which i have done using cv.createBackgroundSubtractorMOG2() algorithm, such well trained algorithms using different concepts for Deeplearning or ML, are extensively used for detecting dynamically moving objects from static cameras.This is a technique for separating out foreground elements from the background and hence, is done by generating a foreground mask which can further be processed using the algorithms we learnt to reduce the noise or detect edges if requried.
+I have feed a small viedo clip and got some very intresting out output which almost nulified the background as shown few shoots of the viedo. 
+
+#### Motion Detection:Results-
 
 
-##### SOURCE
+![Screenshot from 2020-09-01 00-42-40](https://user-images.githubusercontent.com/69350191/91861156-20e8ef80-ec8a-11ea-97ab-5d1ee7ca8488.png)
+
+![Screenshot from 2020-09-01 00-43-44](https://user-images.githubusercontent.com/69350191/91861187-2a725780-ec8a-11ea-9440-f6addaf4212f.png)
+
+![Screenshot from 2020-09-01 00-43-28](https://user-images.githubusercontent.com/69350191/91861231-35c58300-ec8a-11ea-9412-07485ac8d2a0.png)
+
+![Screenshot from 2020-09-01 00-42-55](https://user-images.githubusercontent.com/69350191/91861267-3e1dbe00-ec8a-11ea-928d-c566b1d9e213.png)
+
+### For more information and details about each algorithm please vist the documentation source mentioned.
+
+
+## SOURCE
+
 https://docs.opencv.org/master/d6/d00/tutorial_py_root.html
+
+### Vidoes:
+
+https://www.youtube.com/playlist?list=PLQVvvaa0QuDdttJXlLtAJxJetJcqmqlQq
 
 
