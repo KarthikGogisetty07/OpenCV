@@ -135,11 +135,11 @@ Next, we will be discusing about the edge detection in specific as said before u
 
 ![laplacian](https://user-images.githubusercontent.com/69350191/91744789-9f388980-ebd7-11ea-9b33-9191e93b1cf6.png)
 
-#### Sobel-x:
+#### Sobel-Y:
 
 ![sobel-y](https://user-images.githubusercontent.com/69350191/91745263-4f0df700-ebd8-11ea-95a8-ca6db29e8bd4.png)
 
-#### Sobel-y:
+#### Sobel-X:
 
 ![sobel-x](https://user-images.githubusercontent.com/69350191/91745301-6220c700-ebd8-11ea-9f1c-df9dea889b40.png)
 
